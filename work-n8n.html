@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n8n Storyboard Automator: Production Studio | Adhish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --studio-bg: #0A0510;
+            --studio-cyan: #00FFFF;
+            --studio-cyan-low: rgba(0, 255, 255, 0.1);
+            --studio-border: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--studio-bg);
+            color: var(--text-silver);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container-studio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Section */
+        .studio-header {
+            padding: 100px 0 60px;
+            border-bottom: 1px solid var(--studio-border);
+            margin-bottom: 60px;
+        }
+
+        .studio-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid var(--studio-cyan-low);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--studio-cyan);
+            margin-bottom: 24px;
+        }
+
+        .studio-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+        }
+
+        .btn-glow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: transparent;
+            border: 1px solid var(--studio-cyan-low);
+            color: var(--studio-cyan);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+        }
+
+        .btn-glow:hover {
+            border-color: var(--studio-cyan);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Narrative Section */
+        .narrative-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .narrative-item h3 {
+            font-size: 0.9rem;
+            color: var(--studio-cyan);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .narrative-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #A19FAF;
+        }
+
+        /* Visual Showcase */
+        .engine-section {
+            margin-bottom: 100px;
+        }
+
+        .canvas-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--studio-border);
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .canvas-img {
+            width: 100%;
+            aspect-ratio: 21/9;
+            background: #0D0D15;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: 'JetBrains Mono', monospace;
+            overflow: hidden;
+        }
+
+        .canvas-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .engine-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .engine-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--studio-border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .engine-label {
+            padding: 12px 20px;
+            background: rgba(0, 255, 255, 0.05);
+            border-bottom: 1px solid var(--studio-border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--studio-cyan);
+        }
+
+        .engine-media {
+            background: #0D0D15;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .engine-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .engine-text {
+            padding: 20px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #A19FAF;
+            background: #0D0D15;
+            height: 100%;
+        }
+
+        /* Tech Bar */
+        .tech-bar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 0;
+            border-top: 1px solid var(--studio-border);
+            margin-top: 60px;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #A19FAF;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .tech-item i {
+            color: var(--studio-cyan);
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Back Nav */
+        .back-nav {
+            padding: 30px 40px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #A19FAF;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--studio-cyan);
+            transform: translateX(-5px);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .narrative-grid,
+            .engine-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="back-nav">
+        <a href="index.html#works" class="back-link">
+            <i data-lucide="chevron-left"></i> Back to Projects
+        </a>
+    </div>
+
+    <header class="studio-header fade-in">
+        <div class="container-studio">
+            <div class="studio-badge">
+                <i data-lucide="workflow"></i>
+                <span>VISUAL AUTOMATION PIPELINE</span>
+            </div>
+            <h1 class="studio-title">n8n Storyboard Automator</h1>
+            <p class="text-body" style="max-width: 700px; color: #cbd5e1; margin-bottom: 30px;">An automated pipeline
+                that instantly transforms written scripts into visual storyboards, bridging the gap between writing and
+                production.</p>
+            <a href="#" class="btn-glow">
+                <i data-lucide="layout"></i>
+                View Workflow
+            </a>
+        </div>
+    </header>
+
+    <main class="container-studio">
+
+        <!-- NARRATIVE SECTION -->
+        <section class="narrative-grid fade-in">
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="alert-triangle"></i> The Problem</h3>
+                <p>Manual storyboarding is a time-consuming bottleneck that slows down the transition from writing to
+                    production. Traditional workflows require hours of sketching or manual prompting for every
+                    individual scene.</p>
+            </div>
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="settings"></i> The Process</h3>
+                <p>I built a visual automation flow in n8n. The system reads a script, extracts key scenes, applies a
+                    reference image for style consistency, and automatically generates sequential storyboard panels
+                    using Gemini and Veo 3.</p>
+            </div>
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="target"></i> The Goal</h3>
+                <p>To drastically speed up pre-production, allowing teams to instantly visualize their ideas before
+                    rendering. This tool empowers creators to iterate on visual pacing and composition in minutes rather
+                    than days.</p>
+            </div>
+        </section>
+
+        <!-- INPUT/OUTPUT ENGINE -->
+        <section class="engine-section fade-in">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; margin: 0;">The Input/Output
+                    Engine</h2>
+                <div class="studio-badge"
+                    style="margin: 0; background: rgba(255, 165, 0, 0.05); border-color: rgba(255, 165, 0, 0.1); color: #FFA500;">
+                    <i data-lucide="loader"></i>
+                    <span>WORK IN PROGRESS</span>
+                </div>
+            </div>
+
+            <p style="color: #A19FAF; margin-bottom: 30px; font-size: 0.95rem;">This automation represents one core
+                module of a larger, fully automated video generation system I am currently developing. It handles the
+                critical bridge between textual narrative and visual composition.</p>
+
+            <div class="canvas-card">
+                <div class="canvas-img"
+                    style="aspect-ratio: auto; height: auto; min-height: 400px; background: #07070B;">
+                    <img src="assets/work/n8n/canvas.png" alt="n8n Storyboarding Workflow"
+                        style="object-fit: contain; padding: 20px;">
+                </div>
+            </div>
+
+            <div class="engine-grid">
+                <!-- BOX 1: INPUT A -->
+                <div class="engine-card">
+                    <div class="engine-label">INPUT A: TEXT SCRIPT</div>
+                    <div class="engine-text">
+                        <p style="font-style: italic; color: var(--text-white);">
+                            Scene 1: The character stands at the edge of a high-tech landing pad, looking out at a rainy neon city.<br><br>
+                            Scene 2: A close-up of the character's hand pressing a holographic button on their wrist gauntlet.<br><br>
+                            Scene 3: The character jumps off the ledge, falling through the neon signs toward the street below.<br><br>
+                            Scene 4: A mid-air action shot of the character firing a grappling hook toward a hovering drone.<br><br>
+                            Scene 5: The character swings gracefully through the air, neon lights reflecting off their visor.<br><br>
+                            Scene 6: Landing perfectly on a moving hover-train, weapons drawn and ready for action.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BOX 2: INPUT B -->
+                <div class="engine-card">
+                    <div class="engine-label">INPUT B: STYLE REFERENCE</div>
+                    <div class="engine-media">
+                        <img src="assets/work/n8n/reference.png" alt="Style Reference"
+                            onerror="this.style.display='none'; this.parentElement.innerHTML='[ STYLE REFERENCE IMAGE ]'">
+                    </div>
+                </div>
+
+                <!-- BOX 3: OUTPUT -->
+                <div class="engine-card">
+                    <div class="engine-label">OUTPUT: AI STORYBOARD</div>
+                    <div class="engine-media">
+                        <img src="assets/work/n8n/output.jpg" alt="Final AI Storyboard" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH TOOLKIT -->
+        <div class="tech-bar fade-in">
+            <div class="tech-item"><i data-lucide="activity"></i> n8n</div>
+            <div class="tech-item"><i data-lucide="sparkles"></i> Gemini (LLM)</div>
+            <div class="tech-item"><i data-lucide="video"></i> Veo 3 (Video AI)</div>
+        </div>
+
+    </main>
+
+    <footer style="padding: 40px; border-top: 1px solid var(--studio-border); text-align: center; margin-top: 60px;">
+        <p class="mono" style="font-size: 0.6rem; opacity: 0.4;">ADHB_WORKFLOW_PROTOCOL // STORYBOARD_AUTOMATOR_V1.0 //
+            2026</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hauwee's Degen Diaries: Production Studio | Adhish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --studio-bg: #0A0510;
+            --studio-cyan: #00FFFF;
+            --studio-cyan-low: rgba(0, 255, 255, 0.1);
+            --studio-border: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--studio-bg);
+            color: var(--text-silver);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container-studio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Section */
+        .studio-header {
+            padding: 100px 0 60px;
+            border-bottom: 1px solid var(--studio-border);
+            margin-bottom: 60px;
+        }
+
+        .studio-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid var(--studio-cyan-low);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--studio-cyan);
+            margin-bottom: 24px;
+        }
+
+        .studio-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+        }
+
+        /* Narrative Section */
+        .narrative-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .narrative-item h3 {
+            font-size: 0.9rem;
+            color: var(--studio-cyan);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .narrative-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #A19FAF;
+        }
+
+        /* Character Forge */
+        .forge-section {
+            margin-bottom: 100px;
+        }
+
+        .forge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .forge-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--studio-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .forge-card:hover {
+            border-color: var(--studio-cyan);
+            background: rgba(0, 255, 255, 0.02);
+        }
+
+        .forge-img {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 */
+            background: #15111D;
+            overflow: hidden;
+        }
+
+        .forge-img img, .forge-img .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .forge-caption {
+            padding: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #A19FAF;
+            border-top: 1px solid var(--studio-border);
+        }
+
+        /* Deployments Section */
+        .deployments-section {
+            margin-bottom: 100px;
+        }
+
+        .deployment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .deployment-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            background: #0D0D15;
+            border: 1px solid var(--studio-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .deployment-card:hover {
+            border-color: var(--studio-cyan);
+            background: #12121B;
+        }
+
+        .deployment-video-wrapper {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 */
+            background: #15111D;
+            overflow: hidden;
+        }
+
+        .deployment-video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .deployment-content {
+            padding: 24px;
+        }
+
+        .deployment-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .deployment-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-studio {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+            background: var(--studio-cyan-low);
+            border: 1px solid var(--studio-cyan-low);
+            color: var(--studio-cyan);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-studio:hover {
+            background: var(--studio-cyan);
+            color: var(--studio-bg);
+        }
+
+        .btn-terminal {
+            background: transparent;
+            border-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-silver);
+        }
+
+        .btn-terminal:hover {
+            border-color: var(--text-white);
+            color: var(--text-white);
+            background: transparent;
+        }
+
+        /* Back Nav */
+        .back-nav {
+            padding: 30px 40px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #A19FAF;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--studio-cyan);
+            transform: translateX(-5px);
+        }
+
+        /* Page Transitions */
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .narrative-grid, .forge-grid, .deployment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-nav">
+        <a href="index.html#works" class="back-link">
+            <i data-lucide="chevron-left"></i> Back to Projects
+        </a>
+    </div>
+
+    <header class="studio-header fade-in">
+        <div class="container-studio">
+            <h1 class="studio-title">Hauwee's Degen Diaries: Dev Log</h1>
+            <p class="text-body" style="max-width: 600px;">A series of fully AI-produced episodes designed to make crypto safety easy to understand through storytelling.</p>
+        </div>
+    </header>
+
+    <main class="container-studio">
+        
+        <!-- PRODUCTION NARRATIVE -->
+        <section class="narrative-grid fade-in">
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="layers"></i> System Methodology</h3>
+                <p>I orchestrated a multi-stage production workflow that manually bridged independent generative tools into a cohesive cinematic output. By following a structured path from script verification through Veo 3 motion synthesis (via Google Flow) and Eleven Labs audio, I ensured that every AI asset was hand-vetted and refined before final assembly in DaVinci Resolve.</p>
+            </div>
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="target"></i> The Creative Challenge</h3>
+                <p>Maintaining character identity and temporal consistency during intense motion sequences required a hands-on approach. I solved character 'drift' by manually implementing a reference-image anchoring strategy and iteratively refining custom ComfyUI nodes until the visual output met professional standards.</p>
+            </div>
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="book-open"></i> Educational Objective</h3>
+                <p>I leveraged the Hauwee character to translate complex Web3 security protocols into accessible, narrative-driven content. My role was to act as the human bridge—ensuring that the AI-generated story remained technically accurate while pushing the boundaries of what high-fidelity AI video can achieve.</p>
+            </div>
+        </section>
+
+        <!-- CHARACTER DEVELOPMENT -->
+        <section class="forge-section fade-in">
+            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; margin-bottom: 12px;">Character Development</h2>
+            <p style="font-family: 'Inter', sans-serif; color: var(--text-silver); margin-bottom: 30px;">I started with a rough idea and manually moved through these stages to lock in a look that stayed consistent throughout the series.</p>
+            
+            <div class="forge-grid">
+                <div class="forge-card">
+                    <div class="forge-img">
+                        <img src="assets/work/hau/concept1_v3.png" alt="Initial Concept">
+                    </div>
+                    <div class="forge-caption" style="font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #A19FAF; padding: 20px;">
+                        <strong style="color: var(--text-white); display: block; margin-bottom: 5px;">Initial Concept</strong>
+                        Developing the base personality and look using ChatGPT and high-level prompt tuning.
+                    </div>
+                </div>
+                <div class="forge-card">
+                    <div class="forge-img">
+                        <img src="assets/work/hau/concept2.png" alt="Prompting Expressions">
+                    </div>
+                    <div class="forge-caption" style="font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #A19FAF; padding: 20px;">
+                        <strong style="color: var(--text-white); display: block; margin-bottom: 5px;">Prompting Expressions</strong>
+                        Prompting to add expressions for the character to ensure emotional depth and consistency.
+                    </div>
+                </div>
+                <div class="forge-card">
+                    <div class="forge-img">
+                        <img src="assets/work/hau/concept3.png" alt="Generation in Scene">
+                    </div>
+                    <div class="forge-caption" style="font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #A19FAF; padding: 20px;">
+                        <strong style="color: var(--text-white); display: block; margin-bottom: 5px;">Generation in Scene</strong>
+                        The final character model integrated into a high-fidelity cinematic environment.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEASON 1 EPISODES -->
+        <section class="deployments-section fade-in">
+            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; margin-bottom: 24px;">Season 1 Episodes</h2>
+
+            <div class="deployment-grid">
+                <!-- EPISODE 01 -->
+                <div class="deployment-card">
+                    <div class="deployment-video-wrapper">
+                        <video src="assets/work/hau/ep1.mp4#t=14" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+                    </div>
+                    <div class="deployment-content">
+                        <h3 class="deployment-title">Episode 01: Discord Scams</h3>
+                        <p class="deployment-description">A deep dive into how discord scams target users and how to stay safe.</p>
+                        <div class="deployment-actions">
+                            <a href="https://x.com/HighAsUnicorn/status/1957866831361774014?s=20" target="_blank" class="btn-studio"><i data-lucide="twitter"></i> Watch on X</a>
+                            <a href="#" class="btn-studio btn-terminal"><i data-lucide="info"></i> View Breakdown</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EPISODE 02 -->
+                <div class="deployment-card">
+                    <div class="deployment-video-wrapper">
+                        <video src="assets/work/hau/ep2.mp4#t=10" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+                    </div>
+                    <div class="deployment-content">
+                        <h3 class="deployment-title">Episode 02: Royalty Revolution</h3>
+                        <p class="deployment-description">Exploring the "Royalty Revolution" and what it means for the future of digital assets.</p>
+                        <div class="deployment-actions">
+                            <a href="https://x.com/HighAsUnicorn/status/1959974153143865842?s=20" target="_blank" class="btn-studio"><i data-lucide="twitter"></i> Watch on X</a>
+                            <a href="#" class="btn-studio btn-terminal"><i data-lucide="info"></i> View Breakdown</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="padding: 40px; border-top: 1px solid var(--studio-border); text-align: center; margin-top: 60px;">
+        <p class="mono" style="font-size: 0.6rem; opacity: 0.4;">ADHB_STUDIO_PROTOCOL // ALL_SYSTEMS_GO // 2026</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

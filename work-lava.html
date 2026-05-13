@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAUWEE'S Lava Run: Production Studio | Adhish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --studio-bg: #0A0510;
+            --studio-cyan: #00FFFF;
+            --studio-cyan-low: rgba(0, 255, 255, 0.1);
+            --studio-border: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--studio-bg);
+            color: var(--text-silver);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container-studio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Section */
+        .studio-header {
+            padding: 100px 0 60px;
+            border-bottom: 1px solid var(--studio-border);
+            margin-bottom: 60px;
+        }
+
+        .studio-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid var(--studio-cyan-low);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--studio-cyan);
+            margin-bottom: 24px;
+        }
+
+        .studio-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+        }
+
+        /* Narrative Section */
+        .narrative-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .narrative-item h3 {
+            font-size: 0.9rem;
+            color: var(--studio-cyan);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .narrative-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #A19FAF;
+        }
+
+        /* Character Forge */
+        .forge-section {
+            margin-bottom: 100px;
+        }
+
+        .forge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .forge-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--studio-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .forge-card:hover {
+            border-color: var(--studio-cyan);
+            background: rgba(0, 255, 255, 0.02);
+        }
+
+        .forge-img {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%;
+            /* 16:9 */
+            background: #15111D;
+            overflow: hidden;
+        }
+
+        .forge-img img,
+        .forge-img video,
+        .forge-img .image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .forge-caption {
+            padding: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #A19FAF;
+            border-top: 1px solid var(--studio-border);
+        }
+
+        /* Deployments Section */
+        .deployments-section {
+            margin-bottom: 100px;
+        }
+
+        .deployment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .deployment-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            background: #0D0D15;
+            border: 1px solid var(--studio-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .deployment-card:hover {
+            border-color: var(--studio-cyan);
+            background: #12121B;
+        }
+
+        .deployment-video-wrapper {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%;
+            /* 16:9 */
+            background: #15111D;
+            overflow: hidden;
+        }
+
+        .deployment-video-wrapper .placeholder-box,
+        .deployment-video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .deployment-video-wrapper .placeholder-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .deployment-content {
+            padding: 32px;
+        }
+
+        .deployment-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .deployment-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-studio {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: var(--studio-cyan);
+            border: 1px solid var(--studio-cyan);
+            color: #000;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .btn-studio:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+        }
+
+        .btn-terminal {
+            background: transparent;
+            border-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-silver);
+            box-shadow: none;
+        }
+
+        .btn-terminal:hover {
+            border-color: var(--text-white);
+            color: var(--text-white);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* Back Nav */
+        .back-nav {
+            padding: 30px 40px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #A19FAF;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--studio-cyan);
+            transform: translateX(-5px);
+        }
+
+        /* Page Transitions */
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .narrative-grid,
+            .forge-grid,
+            .deployment-card {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="back-nav">
+        <a href="index.html#works" class="back-link">
+            <i data-lucide="chevron-left"></i> Back to Projects
+        </a>
+    </div>
+
+    <header class="studio-header fade-in">
+        <div class="container-studio">
+            <div class="studio-badge">
+                <i data-lucide="gamepad-2"></i>
+                <span>INTERACTIVE WEBGL EXPERIENCE</span>
+            </div>
+            <h1 class="studio-title">HAUWEE'S Lava Run: Interactive Log</h1>
+            <p class="text-body" style="max-width: 600px; color: #A19FAF; margin-bottom: 30px;">Inspired by classics
+                like Jetpack Joyride, Lava Run follows our mascot Hauwee as he escapes a research center mishap using a
+                lava lamp jetpack.</p>
+            <a href="https://t.me/HighAsUnicorns/11719" target="_blank" class="btn-studio"
+                style="width: auto; padding: 14px 40px; font-size: 0.9rem;">
+                <i data-lucide="play-circle"></i>
+                Play on Telegram
+            </a>
+        </div>
+    </header>
+
+    <main class="container-studio">
+
+        <!-- PRODUCTION NARRATIVE -->
+        <section class="narrative-grid fade-in">
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="cpu"></i> Architecture & Workflow</h3>
+                <p>I architected a custom Unity WebGL pipeline focused on high-performance mobile-web compatibility. By
+                    integrating AI-assisted code generation with hand-written C# physics controllers, I achieved a fluid
+                    60FPS experience within a 3-week development sprint.</p>
+            </div>
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="palette"></i> The Creative Challenge</h3>
+                <p>Bridging high-fidelity AI ideation with low-resolution 2D pixel art required a hybrid approach. I
+                    used custom AI prompts for mascot concepts, then manually hand-refined every frame in Aseprite to
+                    ensure a consistent, authentic retro-gaming aesthetic.</p>
+            </div>
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="zap"></i> Technical Objective</h3>
+                <p>The core goal was to create an interactive engagement layer for our project token ($UBP). I
+                    implemented a custom reward system that bridges in-game performance with external tokenized
+                    incentives, creating a true Web3-enabled gaming loop.</p>
+            </div>
+        </section>
+
+        <!-- ASSET FORGE -->
+        <section class="forge-section fade-in">
+            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; margin-bottom: 12px;">Asset
+                Forge</h2>
+            <p style="font-family: 'Inter', sans-serif; color: var(--text-silver); margin-bottom: 30px;">From AI
+                ideation to hand-drawn pixel perfection.</p>
+
+            <div class="forge-grid">
+                <div class="forge-card">
+                    <div class="forge-img">
+                        <img src="assets/work/lavarun/asset1.png" alt="AI Concept">
+                    </div>
+                    <div class="forge-caption">
+                        <strong style="color: var(--text-white); display: block; margin-bottom: 5px;">AI Draft
+                            Prototyping</strong>
+                        Using generative models to explore mascot shapes, color palettes, and thematic accessories.
+                    </div>
+                </div>
+                <div class="forge-card">
+                    <div class="forge-img">
+                        <video src="assets/work/lavarun/asset2.mp4" autoplay muted loop playsinline
+                            class="w-full h-full object-cover"></video>
+                    </div>
+                    <div class="forge-caption">
+                        <strong style="color: var(--text-white); display: block; margin-bottom: 5px;">Final Asset
+                            Refinement</strong>
+                        Manually refining every pixel to ensure clean lines, readable animations, and optimal sprite
+                        sheets.
+                    </div>
+                </div>
+                <div class="forge-card">
+                    <div class="forge-img">
+                        <video src="assets/work/lavarun/asset3.mp4" autoplay muted loop playsinline
+                            class="w-full h-full object-cover"></video>
+                    </div>
+                    <div class="forge-caption">
+                        <strong style="color: var(--text-white); display: block; margin-bottom: 5px;">Generation in
+                            Scene</strong>
+                        The character model integrated into the final WebGL environment with procedural lava lighting.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAMEPLAY BREAKDOWN -->
+        <section class="deployments-section fade-in">
+            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; margin-bottom: 24px;">Gameplay
+            </h2>
+
+            <div class="deployment-grid">
+                <!-- MECHANICS -->
+                <div class="deployment-card">
+                    <div class="deployment-video-wrapper">
+                        <video src="assets/work/lavarun/gameplay_main.mp4" autoplay muted loop playsinline
+                            class="w-full h-full object-cover"></video>
+                    </div>
+                    <div class="deployment-content">
+                        <h3 class="deployment-title">Try out the game</h3>
+                        <p class="deployment-description">Showcasing the core jetpack physics and procedural obstacle
+                            generation that creates a unique run every session.</p>
+                        <div class="deployment-actions">
+                            <a href="https://t.me/HighAsUnicorns/11719" target="_blank" class="btn-studio"><i
+                                    data-lucide="play"></i> Play on Telegram</a>
+                            <a href="#" class="btn-studio btn-terminal"><i data-lucide="code-2"></i> View Physics
+                                Log</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CINEMATIC -->
+                <div class="deployment-card">
+                    <div class="deployment-video-wrapper">
+                        <video src="assets/work/lavarun/final_cinematic.mp4" autoplay muted loop playsinline
+                            class="w-full h-full object-cover"></video>
+                    </div>
+                    <div class="deployment-content">
+                        <h3 class="deployment-title">Cinematic Opening</h3>
+                        <p class="deployment-description">A high-fidelity intro cinematic generated via Veo 3, setting
+                            the narrative stakes for the player's escape mission.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="padding: 40px; border-top: 1px solid var(--studio-border); text-align: center; margin-top: 60px;">
+        <p class="mono" style="font-size: 0.6rem; opacity: 0.4;">ADHB_STUDIO_PROTOCOL // LAVA_RUN_V1.0 // 2026</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

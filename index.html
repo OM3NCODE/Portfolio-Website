@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhish | AI-Native Creator</title>
+    <meta name="description"
+        content="Portfolio of Adhish, an AI-Native Creator & Integration Specialist building scalable AI production systems.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN for new components) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00FFFF',
+                        background: '#0A0510'
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+
+    <!-- Top Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#toolkit">Toolkit</a></li>
+                <li><a href="#qualifications">Qualifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- SECTION 1: HERO -->
+    <header class="section-hero" id="home" style="padding-top: 60px; min-height: 80vh;">
+        <div class="container hero-container grid-layout"
+            style="width: 100%; max-width: var(--container-max); margin: 0 auto;">
+            <div class="hero-content fade-in delay-1">
+                <div class="hero-stats">
+                    <div class="stat-block">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">AI Generations</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">1.5+</span>
+                        <span class="stat-label">Years Dev</span>
+                    </div>
+                </div>
+
+                <!-- MAIN HEADLINE -->
+                <h1 class="hero-title" style="font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1;">Adhish
+                    Bharadwaj<span class="glowing-dot">.</span></h1>
+                <h2 class="text-2xl text-primary font-medium mb-6" style="font-family: var(--font-heading);">AI-Native
+                    Creator & Systems Architect.</h2>
+
+                <!-- SUBTITLE TEXT -->
+                <p class="hero-subtitle">Bridging the gap between creative intent and technical execution through rapid
+                    prototyping, agentic workflows, and AI-enabled production.</p>
+
+                <div class="hero-actions">
+                    <a href="#works" class="btn-primary">View My Work</a>
+                </div>
+            </div>
+
+            <div class="hero-visual fade-in delay-2">
+                <!-- HERO IMAGE PLACEHOLDER -->
+                <img src="assets/hero-portrait.png" alt="Adhish Bharadwaj" class="hero-portrait">
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 2: ABOUT ME -->
+    <section class="section-about" id="about">
+        <div class="container grid-layout about-grid">
+            <div class="about-content fade-in">
+                <h2 class="section-title">About Me</h2>
+                <!-- ABOUT ME DESCRIPTION -->
+                <p class="text-body text-justify">
+                    I operate at the intersection of Design Thinking and Agentic Engineering. While I identify as a
+                    'Vibe Coder' who uses AI to build applications at 10x speed, I apply a Technical-First philosophy. I
+                    don't just accept AI outputs; I build the systems—utilizing tools like LangGraph and Chroma DB—to
+                    tame them.
+
+                    For the past two years at High As Unicorn (HAU), I evolved from a content creator to a Secondary
+                    Developer on Standby, creating the technical infrastructure needed for marketing, game development,
+                    and character consistency in AI video production. Whether I'm fine-tuning a 2B parameter model like
+                    Sarvam-1 or building WebGL games in Unity, my goal is to ensure the gap between idea and output is
+                    closed by a reliable, repeatable system.
+
+                    Beyond engineering, I am a National Youth Leader and an enthusiast for chiptune sound design and
+                    industrial visualization.
+                </p>
+
+                <!-- MINIMALIST HIGHLIGHTS -->
+                <div class="about-highlights">
+                    <div class="highlight-item national-rep">
+                        <div class="highlight-badge"><i data-lucide="globe"></i></div>
+                        <span class="highlight-text">National Representative: ASEAN-China-India Youth Leadership Summit
+                            2024.</span>
+                    </div>
+
+                    <div class="hobby-pills">
+                        <div class="hobby-pill">
+                            <i data-lucide="palette"></i> Pixel Art
+                        </div>
+                        <div class="hobby-pill">
+                            <i data-lucide="trophy"></i> Basketball
+                        </div>
+                        <div class="hobby-pill">
+                            <i data-lucide="gamepad-2"></i> Gaming
+                        </div>
+                        <div class="hobby-pill">
+                            <i data-lucide="plane"></i> Travelling
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-visual-side fade-in delay-1">
+                <!-- IMPACT CAROUSEL V2 -->
+                <div class="about-carousel-v2">
+                    <div class="carousel-track-v2">
+                        <!-- 13 Images duplicated for loop -->
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/1.jpg" alt="Impact 1">
+                            <div class="carousel-caption-v2">Representing India as a National Youth Leader at the ACI
+                                Summit</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/2.jpg" alt="Impact 2">
+                            <div class="carousel-caption-v2">Winning the Indian Sustainable Stratthon and securing the
+                                national nomination</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/11.jpg" alt="Meetup 1">
+                            <div class="carousel-caption-v2">High As Unicorn Meetup</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/3.jpg" alt="Impact 3">
+                            <div class="carousel-caption-v2">Engaging with global delegates during the Summit's
+                                leadership forum</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/12.jpg" alt="Meetup 2">
+                            <div class="carousel-caption-v2">High As Unicorn Team Synergy</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/4.jpg" alt="Impact 4">
+                            <div class="carousel-caption-v2">Collaborative problem-solving with youth leaders from
+                                Southeast Asia</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/13.jpg" alt="Meetup 3">
+                            <div class="carousel-caption-v2">High As Unicorn Creative Lab</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/5.jpg" alt="Impact 5">
+                            <div class="carousel-caption-v2">Exploring Singapore’s innovation ecosystem during the 2024
+                                Summit</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/6.jpg" alt="Impact 6">
+                            <div class="carousel-caption-v2">Rapid prototyping and solution design during the
+                                sustainability sprint</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/7.jpg" alt="Impact 7">
+                            <div class="carousel-caption-v2">Outdoor quest and networking at Marina Bay</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/8.jpg" alt="Impact 8">
+                            <div class="carousel-caption-v2">The Indian delegation at the ACI Youth Leadership Summit
+                                closing ceremony</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/9.jpg" alt="Impact 9">
+                            <div class="carousel-caption-v2">Presenting "Document Search using Embeddings" at the
+                                NEC-FireDucks Forum</div>
+                        </div>
+                        <div class="carousel-slide-v2">
+                            <img src="assets/carousel/10.jpg" alt="Impact 10">
+                            <div class="carousel-caption-v2">Recognition for excellence in AI implementation and
+                                research</div>
+                        </div>
+                        <!-- DUPLICATES -->
+                        <div class="carousel-slide-v2"><img src="assets/carousel/1.jpg" alt="Impact 1">
+                            <div class="carousel-caption-v2">Representing India as a National Youth Leader at the ACI
+                                Summit</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/2.jpg" alt="Impact 2">
+                            <div class="carousel-caption-v2">Winning the Indian Sustainable Stratthon and securing the
+                                national nomination</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/11.jpg" alt="Meetup 1">
+                            <div class="carousel-caption-v2">High As Unicorn Meetup</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/3.jpg" alt="Impact 3">
+                            <div class="carousel-caption-v2">Engaging with global delegates during the Summit's
+                                leadership forum</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/12.jpg" alt="Meetup 2">
+                            <div class="carousel-caption-v2">High As Unicorn Team Synergy</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/4.jpg" alt="Impact 4">
+                            <div class="carousel-caption-v2">Collaborative problem-solving with youth leaders from
+                                Southeast Asia</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/13.jpg" alt="Meetup 3">
+                            <div class="carousel-caption-v2">High As Unicorn Creative Lab</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/5.jpg" alt="Impact 5">
+                            <div class="carousel-caption-v2">Exploring Singapore’s innovation ecosystem during the 2024
+                                Summit</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/6.jpg" alt="Impact 6">
+                            <div class="carousel-caption-v2">Rapid prototyping and solution design during the
+                                sustainability sprint</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/7.jpg" alt="Impact 7">
+                            <div class="carousel-caption-v2">Outdoor quest and networking at Marina Bay</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/8.jpg" alt="Impact 8">
+                            <div class="carousel-caption-v2">The Indian delegation at the ACI Youth Leadership Summit
+                                closing ceremony</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/9.jpg" alt="Impact 9">
+                            <div class="carousel-caption-v2">Presenting "Document Search using Embeddings" at the
+                                NEC-FireDucks Forum</div>
+                        </div>
+                        <div class="carousel-slide-v2"><img src="assets/carousel/10.jpg" alt="Impact 10">
+                            <div class="carousel-caption-v2">Recognition for excellence in AI implementation and
+                                research</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </section>
+
+    <!-- SECTION 3: FEATURED CASE STUDIES -->
+    <section class="section-works" id="works">
+        <div class="container">
+            <h2 class="section-title text-center fade-in">My Work</h2>
+
+            <div class="works-grid fade-in delay-1">
+                <a href="work-hau.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/work/hau/main_poster.jpg" alt="Hauwee's Degen Diaries"
+                            class="w-full h-full object-cover">
+                        <div class="hover-btn"><span class="arrow">↗</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Hauwee's Degen Diaries: Dev Log</h3>
+                        <p class="project-category">A narrative-driven fully AI AI-generated series designed to simplify
+                            Web3 security and
+                            crypto safety through storytelling</p>
+                    </div>
+                </a>
+
+                <a href="work-lava.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/work/lavarun/main_thumb.png" alt="HAUWEE'S Lava Run"
+                            class="w-full h-full object-cover">
+                        <div class="hover-btn"><span class="arrow">↗</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">HAUWEE'S Lava Run</h3>
+                        <p class="project-category">A Unity WebGL game built for our project token ($UBP), designed to
+                            integrate crypto and gaming through interactive reward systems</p>
+                    </div>
+                </a>
+
+                <a href="work-agentic.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/work/retail/main_thumb.png" alt="Retail Saarthi"
+                            class="w-full h-full object-cover">
+                        <div class="hover-btn"><span class="arrow">↗</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Retail Saarthi</h3>
+                        <p class="project-category">A multilingual AI agent designed to solve inventory overhang for
+                            unorganized Indian retailers using a custom Small Language Model (SLM).</p>
+                    </div>
+                </a>
+
+                <a href="work-n8n.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/work/n8n/canvas.png" alt="n8n Storyboard Automator"
+                            class="w-full h-full object-cover"
+                            onerror="this.src='https://via.placeholder.com/600x400/0A0510/00FFFF?text=n8n+Storyboard+Automator'">
+                        <div class="hover-btn"><span class="arrow">↗</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Nolan's Dream [IN WORK]</h3>
+                        <p class="project-category">An automated pipeline that instantly transforms written scripts into
+                            visual storyboards using n8n and generative AI.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: EXPLORE MY JOURNEY -->
+    <section class="section-journey" id="journey">
+        <div class="container">
+            <h2 class="section-title fade-in">Project Journeys</h2>
+
+            <div class="timeline-list fade-in delay-1">
+                <!-- LAVA RUN -->
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">April 2026 – Present</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">HAUWEE’S Lava Run</h3>
+                        <p class="timeline-mission">A Unity WebGL game built for our project token ($UBP), designed to
+                            integrate crypto and gaming through interactive reward systems.</p>
+                    </div>
+                </div>
+
+                <!-- RETAIL SAARTHI -->
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">Jan – April 2026</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="flex items-center gap-3">
+                            <h3 class="role-title">Retail Saarthi</h3>
+                            <span
+                                class="px-3 py-1 text-[0.6rem] border border-primary text-primary rounded-full uppercase tracking-widest font-bold">Final
+                                Year Project</span>
+                        </div>
+                        <p class="timeline-mission">A multilingual AI agent designed to solve inventory overhang for
+                            unorganized Indian retailers using a custom Small Language Model (SLM).</p>
+                    </div>
+                </div>
+
+                <!-- N8N AUTOMATOR -->
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">May 2026 - Present (Ongoing)</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">Nolan's Dream</h3>
+                        <p class="timeline-mission">An n8n Storyboard automated pipeline that instantly transforms
+                            written scripts into visual storyboards using n8n and generative AI.</p>
+                    </div>
+                </div>
+
+                <!-- DEGEN DIARIES -->
+                <div class="timeline-item">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">Oct – Nov 2025</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="role-title">Hauwee's Degen Diaries</h3>
+                        <p class="timeline-mission">A series of fully AI-produced episodes designed to make crypto
+                            safety easy to understand through storytelling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: TECHNICAL TOOLKIT -->
+    <section id="toolkit" style="padding: 60px 20px;">
+        <div class="container fade-in">
+            <h2 class="section-title text-center">Technical Toolkit</h2>
+            <div class="toolkit-card mt-12 fade-in">
+                <div class="node-bg-animation" style="opacity: 0.05;"></div>
+                <!-- AI Systems Row -->
+                <div class="toolkit-header-row relative z-10">
+                    <h3 class="toolkit-category-title">
+                        <i data-lucide="cpu" class="w-5 h-5"></i> AI Systems
+                    </h3>
+                    <div class="marquee-container overflow-hidden flex whitespace-nowrap">
+                        <div class="marquee-content flex gap-12 pr-12 marquee-speed-sync">
+                            <button class="skill-pill" data-desc="Optimizing 2B parameter models for specialized tasks">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <span class="text-[10px] text-white/40">SLM</span>
+                                </div> SLM Fine-tuning (Sarvam-1)
+                            </button>
+                            <button class="skill-pill" data-desc="Building agentic workflows for Retail Saarthi">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/langgraph-logo.png" alt="LangGraph"
+                                        class="w-full h-full object-contain">
+                                </div> LangGraph
+                            </button>
+                            <button class="skill-pill" data-desc="High-performance vector memory for RAG">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/chromadb-logo.png" alt="Chroma DB"
+                                        class="w-full h-full object-contain">
+                                </div> Chroma DB
+                            </button>
+                            <button class="skill-pill" data-desc="Core logic development for AI agents">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/python-logo.png" alt="Python" class="w-full h-full object-contain">
+                                </div> Python
+                            </button>
+                            <button class="skill-pill" data-desc="Agentic orchestration and framework management">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/langchain-logo.png" alt="LangChain"
+                                        class="w-full h-full object-contain">
+                                </div> LangChain
+                            </button>
+                            <button class="skill-pill" data-desc="Automated production pipelines for AI workflows">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/n8n-logo.png" alt="n8n" class="w-full h-full object-cover">
+                                </div> n8n
+                            </button>
+                        </div>
+                        <!-- Duplicate for infinite scroll -->
+                        <div class="marquee-content flex gap-12 pr-12 marquee-speed-sync" aria-hidden="true">
+                            <button class="skill-pill" data-desc="Optimizing 2B parameter models for specialized tasks">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <span class="text-[10px] text-white/40">SLM</span>
+                                </div> SLM Fine-tuning (Sarvam-1)
+                            </button>
+                            <button class="skill-pill" data-desc="Building agentic workflows for Retail Saarthi">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/langgraph-logo.png" alt="LangGraph"
+                                        class="w-full h-full object-contain">
+                                </div> LangGraph
+                            </button>
+                            <button class="skill-pill" data-desc="High-performance vector memory for RAG">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/chromadb-logo.png" alt="Chroma DB"
+                                        class="w-full h-full object-contain">
+                                </div> Chroma DB
+                            </button>
+                            <button class="skill-pill" data-desc="Core logic development for AI agents">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/python-logo.png" alt="Python" class="w-full h-full object-contain">
+                                </div> Python
+                            </button>
+                            <button class="skill-pill" data-desc="Agentic orchestration and framework management">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/langchain-logo.png" alt="LangChain"
+                                        class="w-full h-full object-contain">
+                                </div> LangChain
+                            </button>
+                            <button class="skill-pill" data-desc="Automated production pipelines for AI workflows">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/n8n-logo.png" alt="n8n" class="w-full h-full object-cover">
+                                </div> n8n
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vibe Coding Row -->
+                <div class="toolkit-header-row relative z-10">
+                    <h3 class="toolkit-category-title">
+                        <i data-lucide="terminal" class="w-5 h-5"></i> Vibe Coding
+                    </h3>
+                    <div class="marquee-container overflow-hidden flex whitespace-nowrap">
+                        <div class="marquee-content flex gap-12 pr-12 marquee-speed-sync reverse-scroll">
+                            <button class="skill-pill"
+                                data-desc="Rapidly prototyping complex Solana/Rune system architectures">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/cursor-logo.png" alt="Cursor" class="w-full h-full object-contain">
+                                </div> Cursor
+                            </button>
+                            <button class="skill-pill" data-desc="AI-powered pair programming and autocompletion">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/copilot-logo.png" alt="GitHub Co-Pilot"
+                                        class="w-full h-full object-contain">
+                                </div> GitHub Co-Pilot
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Rapidly prototyping complex Solana/Rune system architectures">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/antigravity-logo.png" alt="Antigravity"
+                                        class="w-full h-full object-cover">
+                                </div> Antigravity
+                            </button>
+                            <!-- Array duplication for seamless wrap -->
+                            <button class="skill-pill"
+                                data-desc="Rapidly prototyping complex Solana/Rune system architectures">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/cursor-logo.png" alt="Cursor" class="w-full h-full object-contain">
+                                </div> Cursor
+                            </button>
+                            <button class="skill-pill" data-desc="AI-powered pair programming and autocompletion">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/copilot-logo.png" alt="GitHub Co-Pilot"
+                                        class="w-full h-full object-contain">
+                                </div> GitHub Co-Pilot
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Rapidly prototyping complex Solana/Rune system architectures">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/antigravity-logo.png" alt="Antigravity"
+                                        class="w-full h-full object-cover">
+                                </div> Antigravity
+                            </button>
+                        </div>
+                        <!-- Duplicate for infinite scroll -->
+                        <div class="marquee-content flex gap-12 pr-12 marquee-speed-sync reverse-scroll"
+                            aria-hidden="true">
+                            <button class="skill-pill"
+                                data-desc="Rapidly prototyping complex Solana/Rune system architectures">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/cursor-logo.png" alt="Cursor" class="w-full h-full object-contain">
+                                </div> Cursor
+                            </button>
+                            <button class="skill-pill" data-desc="AI-powered pair programming and autocompletion">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/copilot-logo.png" alt="GitHub Co-Pilot"
+                                        class="w-full h-full object-contain">
+                                </div> GitHub Co-Pilot
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Rapidly prototyping complex Solana/Rune system architectures">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/antigravity-logo.png" alt="Antigravity"
+                                        class="w-full h-full object-cover">
+                                </div> Antigravity
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Rapidly prototyping complex Solana/Rune system architectures">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/cursor-logo.png" alt="Cursor" class="w-full h-full object-contain">
+                                </div> Cursor
+                            </button>
+                            <button class="skill-pill" data-desc="AI-powered pair programming and autocompletion">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/copilot-logo.png" alt="GitHub Co-Pilot"
+                                        class="w-full h-full object-contain">
+                                </div> GitHub Co-Pilot
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Rapidly prototyping complex Solana/Rune system architectures">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/antigravity-logo.png" alt="Antigravity"
+                                        class="w-full h-full object-cover">
+                                </div> Antigravity
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Video Row -->
+                <div class="toolkit-header-row relative z-10">
+                    <h3 class="toolkit-category-title">
+                        <i data-lucide="video" class="w-5 h-5"></i> AI Video Models
+                    </h3>
+                    <div class="marquee-container overflow-hidden flex whitespace-nowrap">
+                        <div class="marquee-content flex gap-12 pr-12 marquee-speed-sync">
+                            <button class="skill-pill" data-desc="Generating cinematic AI sequences for HAU trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/veo3-logo.png" alt="Veo 3" class="w-full h-full object-contain">
+                                </div> Veo 3
+                            </button>
+                            <button class="skill-pill" data-desc="Generating cinematic AI sequences for HAU trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/runway-logo.png" alt="Runway" class="w-full h-full object-cover">
+                                </div> Runway
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Iterating on high-fidelity motion and cinematic timing">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/seeddance-logo.png" alt="SeedDance"
+                                        class="w-full h-full object-cover">
+                                </div> SeedDance
+                            </button>
+                            <!-- Array duplication -->
+                            <button class="skill-pill" data-desc="Generating cinematic AI sequences for HAU trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/veo3-logo.png" alt="Veo 3" class="w-full h-full object-contain">
+                                </div> Veo 3
+                            </button>
+                            <button class="skill-pill" data-desc="Generating cinematic AI sequences for HAU trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/runway-logo.png" alt="Runway" class="w-full h-full object-cover">
+                                </div> Runway
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Iterating on high-fidelity motion and cinematic timing">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/seeddance-logo.png" alt="SeedDance"
+                                        class="w-full h-full object-cover">
+                                </div> SeedDance
+                            </button>
+                        </div>
+                        <!-- Duplicate for infinite scroll -->
+                        <div class="marquee-content flex gap-12 pr-12 marquee-speed-sync" aria-hidden="true">
+                            <button class="skill-pill" data-desc="Generating cinematic AI sequences for HAU trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/veo3-logo.png" alt="Veo 3" class="w-full h-full object-contain">
+                                </div> Veo 3
+                            </button>
+                            <button class="skill-pill" data-desc="Generating cinematic AI sequences for HAU trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/runway-logo.png" alt="Runway" class="w-full h-full object-cover">
+                                </div> Runway
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Iterating on high-fidelity motion and cinematic timing">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/seeddance-logo.png" alt="SeedDance"
+                                        class="w-full h-full object-cover">
+                                </div> SeedDance
+                            </button>
+                            <button class="skill-pill" data-desc="Generating cinematic AI sequences for HAU trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-2">
+                                    <img src="assets/veo3-logo.png" alt="Veo 3" class="w-full h-full object-contain">
+                                </div> Veo 3
+                            </button>
+                            <button class="skill-pill" data-desc="Generating cinematic AI sequences for HAU trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/runway-logo.png" alt="Runway" class="w-full h-full object-cover">
+                                </div> Runway
+                            </button>
+                            <button class="skill-pill"
+                                data-desc="Iterating on high-fidelity motion and cinematic timing">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/seeddance-logo.png" alt="SeedDance"
+                                        class="w-full h-full object-cover">
+                                </div> SeedDance
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative Production Row -->
+                <div class="toolkit-header-row relative z-10">
+                    <h3 class="toolkit-category-title">
+                        <i data-lucide="palette" class="w-5 h-5"></i> Creative Production
+                    </h3>
+                    <div class="marquee-container overflow-hidden flex whitespace-nowrap">
+                        <div class="marquee-content flex gap-12 pr-12 marquee-speed-sync reverse-scroll">
+                            <button class="skill-pill" data-desc="Developed HAUWEE’S Lava Run">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/unity-logo.png" alt="Unity" class="w-full h-full object-cover">
+                                </div> Unity (WebGL)
+                            </button>
+                            <button class="skill-pill" data-desc="Edited and color-graded AI-generated trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/davinci-logo.png" alt="DaVinci Resolve"
+                                        class="w-full h-full object-contain">
+                                </div> DaVinci Resolve
+                            </button>
+                            <button class="skill-pill" data-desc="3D modeling and character consistency pipelines">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/blender-logo.png" alt="Blender"
+                                        class="w-full h-full object-contain">
+                                </div> Blender
+                            </button>
+                            <button class="skill-pill" data-desc="Advanced image manipulation and asset generation">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/photoshop-logo.png" alt="Photoshop"
+                                        class="w-full h-full object-contain">
+                                </div> Photoshop
+                            </button>
+                            <button class="skill-pill" data-desc="Pixel art animation for game assets">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/aseprite-logo.png" alt="Aseprite"
+                                        class="w-full h-full object-contain">
+                                </div> Aseprite
+                            </button>
+                        </div>
+                        <!-- Duplicate for infinite scroll -->
+                        <div class="marquee-content flex gap-12 pr-12 marquee-speed-sync reverse-scroll"
+                            aria-hidden="true">
+                            <button class="skill-pill" data-desc="Developed HAUWEE’S Lava Run">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/unity-logo.png" alt="Unity" class="w-full h-full object-cover">
+                                </div> Unity (WebGL)
+                            </button>
+                            <button class="skill-pill" data-desc="Edited and color-graded AI-generated trailers">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/davinci-logo.png" alt="DaVinci Resolve"
+                                        class="w-full h-full object-contain">
+                                </div> DaVinci Resolve
+                            </button>
+                            <button class="skill-pill" data-desc="3D modeling and character consistency pipelines">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/blender-logo.png" alt="Blender"
+                                        class="w-full h-full object-contain">
+                                </div> Blender
+                            </button>
+                            <button class="skill-pill" data-desc="Advanced image manipulation and asset generation">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden p-1">
+                                    <img src="assets/photoshop-logo.png" alt="Photoshop"
+                                        class="w-full h-full object-contain">
+                                </div> Photoshop
+                            </button>
+                            <button class="skill-pill" data-desc="Pixel art animation for game assets">
+                                <div
+                                    class="w-12 h-12 bg-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                                    <img src="assets/aseprite-logo.png" alt="Aseprite"
+                                        class="w-full h-full object-contain">
+                                </div> Aseprite
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SYSTEM STATUS FOOTER -->
+            <div
+                class="mt-6 flex flex-wrap justify-between items-center text-xs font-mono text-primary px-4 py-2 border border-primary/20 rounded-md bg-black/30">
+                <div class="flex gap-4">
+                    <span class="flex items-center gap-2"><span
+                            class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> [ACTIVE]</span>
+                    <span>[SYNCING_KNOWLEDGE_BASE]</span>
+                </div>
+                <span>[VERSION: 2026.1]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: CERTIFICATIONS & QUALIFICATIONS -->
+    <section id="qualifications" style="padding: 60px 20px;">
+        <div class="container fade-in">
+            <h2 class="section-title text-center">Qualifications & Certifications</h2>
+
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-12">
+
+                <div
+                    class="glass-panel p-6 border border-white/10 hover:border-primary/30 transition-colors relative group">
+                    <div class="grid md:grid-cols-5 gap-6 h-full items-center">
+                        <div class="md:col-span-3 flex flex-col justify-between h-full">
+                            <div>
+                                <div class="p-3 bg-primary/20 rounded-full text-primary inline-flex mb-4">
+                                    <i data-lucide="graduation-cap"></i>
+                                </div>
+                                <h3 class="font-bold text-primary text-xl">B.Tech CSE AIML</h3>
+                                <p class="text-sm text-white mt-1">CMR University (2022–2026)</p>
+                                <p class="text-[#A19FAF] mt-2 text-sm leading-relaxed">Anchored by a Technical-First
+                                    identity, with deep focus on System Architecture and AI application engineering.</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/adhishbharadwaj/details/education/edit/forms/871264230/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bm8c46Qy4Rpaybl0vZfLDHQ%3D%3D"
+                                target="_blank"
+                                class="inline-flex items-center gap-2 text-xs font-mono uppercase text-primary mt-6 hover:text-white transition-colors">
+                                Verify on LinkedIn <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="md:col-span-2 cert-preview-container h-32 md:h-full relative overflow-hidden rounded-lg border border-white/5 bg-white/5 flex items-center justify-center p-4">
+                            <img src="assets/college-logo.png" alt="CMRU Logo" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-panel p-6 border border-white/10 hover:border-primary/30 transition-colors relative group">
+                    <div class="grid md:grid-cols-5 gap-6 h-full items-center">
+                        <div class="md:col-span-3 flex flex-col justify-between h-full">
+                            <div>
+                                <div class="p-3 bg-primary/20 rounded-full text-primary inline-flex mb-4">
+                                    <i data-lucide="server-cog"></i>
+                                </div>
+                                <h3 class="font-bold text-primary text-xl" style="font-family: var(--font-heading);">SAP
+                                    Certified Associate</h3>
+                                <p class="text-sm text-white mt-1">Generative AI Developer</p>
+                                <p class="text-[#A19FAF] mt-2 text-sm leading-relaxed">Certified in integrating
+                                    generative AI models within robust, scalable enterprise environments and workflows.
+                                </p>
+                            </div>
+                            <a href="https://www.credly.com/badges/2421a392-10af-40b7-ac72-fd7f1ec07cf6/linked_in_profile"
+                                target="_blank"
+                                class="inline-flex items-center gap-2 text-xs font-mono uppercase text-primary mt-6 hover:text-white transition-colors">
+                                Verify Credential <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="md:col-span-2 cert-preview-container h-32 md:h-full relative overflow-hidden rounded-lg border border-white/5 bg-[#1A1625] flex items-center justify-center p-2">
+                            <img src="assets/sap-certification.png" alt="SAP Generative AI Developer Badge"
+                                class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="glass-panel p-6 border border-white/10 hover:border-primary/30 transition-colors relative group">
+                    <div class="grid md:grid-cols-5 gap-6 h-full items-center">
+                        <div class="md:col-span-3 flex flex-col justify-between h-full">
+                            <div>
+                                <div class="p-3 bg-primary/20 rounded-full text-primary inline-flex mb-4">
+                                    <i data-lucide="network"></i>
+                                </div>
+                                <h3 class="font-bold text-primary text-xl" style="font-family: var(--font-heading);">
+                                    LangChain Academy</h3>
+                                <p class="text-sm text-white mt-1">Introduction to LangGraph</p>
+                                <p class="text-[#A19FAF] mt-2 text-sm leading-relaxed">Mastered multi-agentic workflows
+                                    and stateful orchestration using LangGraph for complex AI systems.</p>
+                            </div>
+                            <a href="https://academy.langchain.com/certificates/so7rk3a7wk" target="_blank"
+                                class="inline-flex items-center gap-2 text-xs font-mono uppercase text-primary mt-6 hover:text-white transition-colors">
+                                Verify Credential <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                        <div
+                            class="md:col-span-2 cert-preview-container h-32 md:h-full relative overflow-hidden rounded-lg border border-white/5 bg-[#1A1625] flex items-center justify-center p-2">
+                            <img src="assets/langgraph-certification.png" alt="LangGraph Certification"
+                                class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: HIGH-IMPACT BANNER -->
+    <section class="section-banner fade-in">
+        <div class="banner-content">
+            <h2 class="banner-title">Ready to build scalable AI production systems?</h2>
+            <a href="#contact" class="btn-solid">Let's Talk</a>
+        </div>
+        <div class="banner-bg"></div>
+    </section>
+
+    <!-- SECTION 7: FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="container text-center fade-in">
+            <h2 class="footer-title">Got a Vision? Let's Bring it to Life!</h2>
+            <div class="footer-socials">
+                <a href="mailto:adhish.b.dev@gmail.com" class="social-link" title="Primary Email"><i
+                        data-lucide="mail"></i> Email</a>
+                <a href="https://www.linkedin.com/in/adhishbharadwaj" target="_blank" class="social-link"><img
+                        src="assets/socials/linkedin.png" alt="LinkedIn" class="social-icon"> LinkedIn</a>
+                <a href="https://x.com/IamAdhish2005" target="_blank" class="social-link"><img
+                        src="assets/socials/x.png" alt="X" class="social-icon"> X</a>
+            </div>
+            <p class="mt-8 text-sm text-[#A19FAF]">Secondary: officialadhishbharadwaj@gmail.com</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Adhish Bharadwaj. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Tooltip -->
+    <div id="custom-tooltip"
+        class="fixed z-[9999] pointer-events-none opacity-0 bg-[#0A0510] border border-primary text-[#A19FAF] font-mono text-xs px-3 py-2 rounded-md shadow-[0_0_15px_rgba(0,255,255,0.2)]"
+        style="transition: opacity 0.2s ease, transform 0.1s ease; transform: translate(-50%, -120%);"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons after DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+    <div id="custom-tooltip" class="custom-tooltip"></div>
+</body>
+
+</html>

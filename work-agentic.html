@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Saarthi: AI-Driven Inventory Intelligence | Adhish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --studio-bg: #0A0510;
+            --studio-cyan: #00FFFF;
+            --studio-cyan-low: rgba(0, 255, 255, 0.1);
+            --studio-border: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--studio-bg);
+            color: var(--text-silver);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container-studio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Section */
+        .studio-header {
+            padding: 100px 0 60px;
+            border-bottom: 1px solid var(--studio-border);
+            margin-bottom: 60px;
+        }
+
+        .studio-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid var(--studio-cyan-low);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--studio-cyan);
+            margin-bottom: 24px;
+        }
+
+        .studio-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+        }
+
+        .btn-glow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: transparent;
+            border: 1px solid var(--studio-cyan-low);
+            color: var(--studio-cyan);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+        }
+
+        .btn-glow:hover {
+            border-color: var(--studio-cyan);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Narrative Section */
+        .narrative-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .narrative-item h3 {
+            font-size: 0.9rem;
+            color: var(--studio-cyan);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .narrative-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #A19FAF;
+        }
+
+        /* Architecture Section */
+        .arch-section {
+            margin-bottom: 100px;
+        }
+
+        .arch-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--studio-border);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .arch-img {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 12px;
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        /* Showcase Grid */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .showcase-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--studio-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .showcase-card:hover {
+            border-color: var(--studio-cyan);
+        }
+
+        .showcase-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #0D0D15;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-img img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+               object-fit: cover;
+        }
+
+        .showcase-img.contain img {
+            -o-object-fit: contain;
+               object-fit: contain;
+            padding: 20px;
+        }
+
+        .showcase-content {
+            padding: 24px;
+        }
+
+        .showcase-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Tech Bar */
+        .tech-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 40px 0;
+            border-top: 1px solid var(--studio-border);
+            margin-bottom: 80px;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #A19FAF;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .tech-item i {
+            color: var(--studio-cyan);
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Back Nav */
+        .back-nav {
+            padding: 30px 40px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #A19FAF;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--studio-cyan);
+            transform: translateX(-5px);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .narrative-grid,
+            .showcase-grid,
+            .tech-bar {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+  <link rel="stylesheet" crossorigin href="/Portfolio-Website/assets/styles-BlYzIqgd.css">
+</head>
+
+<body>
+
+    <div class="back-nav">
+        <a href="index.html#works" class="back-link">
+            <i data-lucide="chevron-left"></i> Back to Projects
+        </a>
+    </div>
+
+    <header class="studio-header fade-in">
+        <div class="container-studio">
+            <div class="studio-badge">
+                <i data-lucide="bot"></i>
+                <span>AGENTIC WORKFLOW INFRASTRUCTURE</span>
+            </div>
+            <h1 class="studio-title">Retail Saarthi: AI-Driven Inventory Intelligence</h1>
+            <p class="text-body" style="max-width: 700px; color: #cbd5e1; margin-bottom: 30px;">A multilingual AI agent
+                built to help Indian kirana stores optimize inventory through demand prediction and trend analysis.Done
+                by me and my team at CMR University</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="https://github.com/OM3NCODE/Retail-optimizer-UI" target="_blank" class="btn-glow">
+                    <i data-lucide="github"></i>
+                    GitHub Repo
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="container-studio">
+
+        <!-- NARRATIVE SECTION -->
+        <section class="narrative-grid fade-in">
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="alert-circle"></i> The Problem</h3>
+                <p>Unorganized retailers in India often face inventory overhang due to a lack of data-driven
+                    forecasting. Retail Saarthi bridges this gap with a simple, mobile-first solution designed
+                    specifically for the Indian market, replacing intuition with precise insights.</p>
+            </div>
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="workflow"></i> The Methodology</h3>
+                <p>I orchestrated the agentic workflows using LangGraph to ensure reliable, multi-step decision-making.
+                    To make the tool accessible, I utilized a Qwen 3.5 B SLM and Sarvam M model, enabling the agent to
+                    communicate and analyze trends in English, Hindi, Telugu, Kannada, and Tamil.</p>
+            </div>
+            <div class="narrative-item">
+                <h3 class="mono"><i data-lucide="trending-up"></i> The Impact</h3>
+                <p>The goal is to eliminate waste and financial loss for small retailers by replacing intuition with
+                    precise, AI-generated insights. By providing trend analysis in local languages, we empower shop
+                    owners to compete with modern organized retail.</p>
+            </div>
+        </section>
+
+        <!-- TECH BAR -->
+        <div class="tech-bar fade-in">
+            <div class="tech-item"><i data-lucide="git-branch"></i> LangGraph</div>
+            <div class="tech-item"><i data-lucide="cpu"></i> Qwen 3.5B / Sarvam M</div>
+            <div class="tech-item"><i data-lucide="database"></i> Chroma DB</div>
+            <div class="tech-item"><i data-lucide="code-2"></i> Python</div>
+        </div>
+
+        <!-- ARCHITECTURE DIAGRAM -->
+        <section class="arch-section fade-in">
+            <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; margin-bottom: 24px;">High-Level
+                Architecture</h2>
+            <div class="arch-card">
+                <img src="assets/work/retail/architecture.png" alt="Retail Saarthi Architecture" class="arch-img">
+            </div>
+        </section>
+
+        <!-- AGENT WORKFLOWS -->
+        <section class="showcase-grid fade-in">
+            <div class="showcase-card" style="grid-column: span 2;">
+                <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; margin: 24px 24px 12px;">
+                    Agent Designed on LangGraph by Me</h2>
+                <p style="padding: 0 24px 24px; color: #A19FAF;">Detailed multi-agent orchestration for intent
+                    identification and parallel trend research.</p>
+            </div>
+
+            <div class="showcase-card">
+                <div class="showcase-img contain">
+                    <img src="assets/work/retail/workflow1.png" alt="Orchestration Workflow">
+                </div>
+                <div class="showcase-content">
+                    <h4 class="showcase-title">Intent Orchestration</h4>
+                    <p style="font-size: 0.85rem; color: #A19FAF;">The main ReAct agent loop for identifying user intent
+                        and routing to specialized tools.</p>
+                </div>
+            </div>
+
+            <div class="showcase-card">
+                <div class="showcase-img contain">
+                    <img src="assets/work/retail/workflow2.png" alt="Trend Subgraph">
+                </div>
+                <div class="showcase-content">
+                    <h4 class="showcase-title">Parallel Trend Research</h4>
+                    <p style="font-size: 0.85rem; color: #A19FAF;">A specialized subgraph for parallel data gathering
+                        and insight reduction.</p>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer style="padding: 40px; border-top: 1px solid var(--studio-border); text-align: center; margin-top: 60px;">
+        <p class="mono" style="font-size: 0.6rem; opacity: 0.4;">ADHB_RETAIL_PROTOCOL // KIRANA_INTELLIGENCE_V1.0 //
+            2026</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
